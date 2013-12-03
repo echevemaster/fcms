@@ -10,7 +10,7 @@ class Config(object):
 
 
 class ProductionConfig(Config):
-    """Base config for production environment
+    """ Base config for production environment
     """
     pass   # for now
 
