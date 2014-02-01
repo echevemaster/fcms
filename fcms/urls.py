@@ -1,18 +1,9 @@
 from django.conf.urls import patterns, include, url
-from fcms.web.views import index
 
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'fcms.views.home', name='home'),
-    # url(r'^fcms/', include('fcms.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    url(r'^$', 'fcms.web.views.index', name='index'),
-    url(r'^admin/', include(admin.site.urls)),
-)
+                       url(r'^$', 'fcms.web.views.index', name='index'),
+                       url(r'^admin/', include(admin.site.urls)),
+                       )

@@ -22,3 +22,8 @@ Pygments==1.6
 # Miscellaneous
 Paver==1.2.1
 colorama==0.2.7
+
+# Development
+Django==1.5
+django-zurb-foundation
+wsgiref
