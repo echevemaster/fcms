@@ -7,7 +7,7 @@ FLOSS Community Management System
 Build Status
 ------------
 
-.. |master| https://travis-ci.org/echevemaster/fcms.png?branch=master
+.. |master| https://secure.travis-ci.org/echevemaster/fcms.png?branch=master
    :alt: Build Status - master branch
    :target: http://travis-ci.org/#!/echevemaster/fcms
 
