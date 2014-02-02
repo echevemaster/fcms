@@ -6,4 +6,6 @@ admin.autodiscover()
 urlpatterns = patterns('',
                        url(r'^$', 'fcms.web.views.index', name='index'),
                        url(r'^admin/', include(admin.site.urls)),
+                       url('', include('social.apps.django_app.urls',
+                                       namespace='social')),
                        )

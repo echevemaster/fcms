@@ -124,8 +124,31 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.csrf',
     'django.core.context_processors.request',
+    'social.apps.django_app.context_processors.backends',
+    'social.apps.django_app.context_processors.login_redirect',
 )
 
+AUTHENTICATION_BACKENDS = (
+    "social.backends.google.GooglePlusAuth",
+    "social.backends.twitter.TwitterOAuth",
+    "social.backends.github.GithubOAuth2",
+    "social.backends.facebook.FacebookOAuth2",
+    "django.contrib.auth.backends.ModelBackend",
+)
+
+SOCIAL_AUTH_PIPELINE = (
+    'social.pipeline.social_auth.social_details',
+    'social.pipeline.social_auth.social_uid',
+    'social.pipeline.social_auth.auth_allowed',
+    'social.pipeline.social_auth.social_user',
+    'social.pipeline.user.get_username',
+    'example.app.pipeline.require_email',
+    'social.pipeline.mail.mail_validation',
+    'social.pipeline.user.create_user',
+    'social.pipeline.social_auth.associate_user',
+    'social.pipeline.social_auth.load_extra_data',
+    'social.pipeline.user.user_details'
+)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -136,7 +159,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'fcms.web',
-    'foundation'
+    'foundation',
+    'social.apps.django_app.default',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )

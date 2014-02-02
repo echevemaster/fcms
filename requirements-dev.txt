@@ -26,4 +26,5 @@ colorama==0.2.7
 # Development
 Django==1.5
 django-zurb-foundation
+python-social-auth
 wsgiref
