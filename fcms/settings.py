@@ -113,6 +113,21 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, 'templates').replace('\\', '/'),
 )
 
+INSTALLED_APPS = (
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django.contrib.admin',
+    'fcms.web',
+    'foundation',
+    'social.apps.django_app.default',
+    # Uncomment the next line to enable admin documentation:
+    # 'django.contrib.admindocs',
+)
+
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",
     "django.core.context_processors.debug",
@@ -143,6 +158,9 @@ SOCIAL_AUTH_GITHUB_SECRET = '84ac2670788f0ba1c63b1d33cf1cc350d13ee875'
 SOCIAL_AUTH_FACEBOOK_KEY = '669055356471025'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'e4ba9b7a1920cd59854b879924f3ca2f'
 
+SOCIAL_AUTH_TWITTER_KEY = 'Hk50N0zr0aJZn9TLDXbkiA'
+SOCIAL_AUTH_TWITTER_SECRET = 'c5c7x1KKGbbh277Htgwqf5XNZXIZ5SYJvOUHwXAg'
+
 LOGIN_REDIRECT_URL = '/done/'
 
 
@@ -159,22 +177,6 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.load_extra_data',
     'social.pipeline.user.user_details'
 )
-
-INSTALLED_APPS = (
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django.contrib.admin',
-    'fcms.web',
-    'foundation',
-    'social.apps.django_app.default',
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
-)
-
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.

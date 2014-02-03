@@ -16,11 +16,13 @@
     </div>
     <div class="small-2 columns login-anchor">
     <!--<a href="{% url 'social:begin' 'github' %}">Login</a>-->
+{% if user.is_authenticated %}
+Welcome, {{ user.first_name}} {{ user.last_name }}, your last login was {{ user.last_login }} <a href="/logout/">logout</a>)
+{% else %}
     <a href="{% url 'auth' %}">Login</a>
-    You are logged in as {{ user.username }}! <a href="/logout/">logout</a>)
+{% endif %}
     </div>
-
-    </div>
+</div>
   </div>
 </header>
   <!-- End Header and Nav -->

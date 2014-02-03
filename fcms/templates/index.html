@@ -6,7 +6,11 @@
 
 {% block base_body %}
 
-You are logged in as {{ user.username }}!
+{% if user.is_authenticated %}
+Welcome, {{ user.username }}
+{% endif %}
+
+You are logged in as {{ request.user.username }}!
 
 <p>Associated:</p>
 <ul>

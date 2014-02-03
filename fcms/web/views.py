@@ -8,14 +8,14 @@ def index(request):
     """
     Index site view for fcms
     """
-    return render_to_response('index.html')
+    return render_to_response('index.html', {}, RequestContext(request))
 
 
 def auth(request):
     """
     Where the users are login
     """
-    return render_to_response('auth.html')
+    return render_to_response('auth.html', {}, RequestContext(request))
 
 
 def logout(request):
