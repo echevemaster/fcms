@@ -15,7 +15,9 @@
         </div>
     </div>
     <div class="small-2 columns login-anchor">
-    <a href="">Login</a>
+    <!--<a href="{% url 'social:begin' 'github' %}">Login</a>-->
+    <a href="{% url 'auth' %}">Login</a>
+    You are logged in as {{ user.username }}! <a href="/logout/">logout</a>)
     </div>
 
     </div>

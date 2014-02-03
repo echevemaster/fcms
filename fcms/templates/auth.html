@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+Login
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static "main/css/style.css" %}">
+{% endblock %}
+
+{% block base_body %}
+<div class="row">
+
+<div class="large-8">
+    <a href="{% url 'social:begin' 'facebook-app' %}">Login with Facebook</a>
+</div>
+
+<div class="large-8">
+    <a href="{% url 'social:begin' 'twitter' %}">Login with Twitter</a>
+</div>
+
+<div class="large-8">
+    <a href="{% url 'social:begin' 'github' %}">Login with Github</a>
+</div>
+
+<div class="large-8">
+    <a href="{% url 'social:begin' 'google' %}">Login with Google</a>
+</div>
+
+<div class="large-8">
+    <a href="{% url 'social:begin' 'fedora' %}">Login with Fedora</a>
+</div>
+
+</div>
+
+
+{% endblock base_body %}

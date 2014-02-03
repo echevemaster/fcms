@@ -129,12 +129,22 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 AUTHENTICATION_BACKENDS = (
-    "social.backends.google.GooglePlusAuth",
+    "social.backends.google.GoogleOpenId",
     "social.backends.twitter.TwitterOAuth",
     "social.backends.github.GithubOAuth2",
     "social.backends.facebook.FacebookOAuth2",
+    "social.backends.fedora.FedoraOpenId",
     "django.contrib.auth.backends.ModelBackend",
 )
+
+SOCIAL_AUTH_GITHUB_KEY = '4a8c67c684d420b0d724'
+SOCIAL_AUTH_GITHUB_SECRET = '84ac2670788f0ba1c63b1d33cf1cc350d13ee875'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '669055356471025'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'e4ba9b7a1920cd59854b879924f3ca2f'
+
+LOGIN_REDIRECT_URL = '/done/'
+
 
 SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.social_details',
@@ -142,7 +152,7 @@ SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.auth_allowed',
     'social.pipeline.social_auth.social_user',
     'social.pipeline.user.get_username',
-    'example.app.pipeline.require_email',
+    # 'example.app.pipeline.require_email',
     'social.pipeline.mail.mail_validation',
     'social.pipeline.user.create_user',
     'social.pipeline.social_auth.associate_user',
